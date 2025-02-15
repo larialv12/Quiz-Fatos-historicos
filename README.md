@@ -1,13 +1,23 @@
-# Sistema de Cálculo de Juros de Dívidas
+# Quz Fatos Historicos
 
-Um sistema simples em JavaScript  que calcula os juros de uma dívida com base no valor da dívida e nos dias de atraso.
+Um quiz   sobre fatos historicos que retorna uma pontuacao final ao usuario.
 
 ## Descrição
 
-Este projeto permite que os usuários insiram o valor da dívida e o número de dias de atraso. O sistema então calcula e retorna o valor dos juros acumulados. É uma ferramenta útil para entender o impacto dos atrasos no pagamento de dívidas.
+Este sistema  consiste em um quiz interativo sobre fatos históricos, desenvolvido em JavaScript e executado via console. O quiz testa o conhecimento dos usuários sobre datas importantes de eventos históricos, abrangendo uma ampla gama de tópicos, desde acontecimentos políticos até marcos tecnológicos e culturais.Alem disso ,  o sistema conta com uma pontuação para acertos do usuario.
+
+O usuário é   solicitado a inserir seu nome.
+
+O programa seleciona e embaralha um conjunto de perguntas.
+
+As perguntas são apresentadas sequencialmente, e o usuário insere suas respostas.
+
+Após cada resposta, o programa fornece uma resposta.
+
+Ao final do quiz, uma mensagem personalizada é exibida com base na pontuação total.
 
 ## Instalação
 
 1. Clone este repositório
    ```bash
-   git clone https://github.com/seuusuario/calculo-juros-dividas.git
+   git clone https://github.com/larialv12/Quiz-Fatos-historicos
