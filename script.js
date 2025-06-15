@@ -4,8 +4,8 @@ console.log("Seja bem vindo ao quiz de fatos historicos, para começar , digite 
 
 let nomeUsuario = entradaDados.question("");
 
-
-const colecaoPerguntas = [{
+const colecaoPerguntas = [
+   {
       id: 1,
       pergunta: 'Quando aconteceu o atentado as Torres Gêmeas?',
       resposta: '2001'
@@ -161,18 +161,18 @@ const colecaoPerguntas = [{
 function embaralharArray(colecaoPerguntas) {
    return colecaoPerguntas.sort(() => Math.random() - 0.5);
 }
+
 //seleciona e cria uma const com as perguntas embaralhadas
 function selecionarPerguntasAleatorias(colecaoPerguntas, quantidadePerguntas) {
    const perguntasEmbaralhada = embaralharArray(colecaoPerguntas);
-
    return perguntasEmbaralhada.slice(0, quantidadePerguntas);
 }
+
 //quantidade de perguntas exibidas ao usuario
 const quantidadePerguntas = 10;
 const perguntasEmbaralhadas = selecionarPerguntasAleatorias(colecaoPerguntas, quantidadePerguntas);
 
 let acerto = 0;
-
 
 if (nomeUsuario == "") {
    console.log("Digite um nome valido");
@@ -180,64 +180,46 @@ if (nomeUsuario == "") {
    console.log(`Olá, ${nomeUsuario}! Vamos começar o quiz.`);
 
    //exibe ao usuario uma pergunta por vez
-
    perguntasEmbaralhadas.forEach((pergunta, index) => {
       console.log(`  ${index + 1 }: ${pergunta.pergunta}`);
       const respostaUsuario = entradaDados.question("Digite Sua resposta(ano): ");
 
-
       //verifica se a resposta esta correta ou nao 
       if (respostaUsuario === pergunta.resposta) {
          console.log("Resposta correta!");
-
          //a cada acerto é acrescentado um ponto ao usuario
          acerto++;
-
-
       } else {
          console.log(`Incorreto. A resposta correta era ${pergunta.resposta}.`);
       }
    });
-   
 
-    //verifica a qunatidade de acertos e de acordo com o resultado , é retornado uma mensagem para cda quantidade
-   if (acerto >= 1 && acerto <= 3) {
-      console.log("Jogador(a): " + nomeUsuario);
-
-      console.log("Pontuação final:  " + acerto + "  acertos ");
-
-
-      console.log("OH NAO!! Tente mais uma vez ");
-
-   } else if (acerto >= 4 && acerto <= 6) {
-      console.log("Jogador(a): " + nomeUsuario);
-      console.log("Pontuação final:  " + acerto + "  acertos ");
-
-
-      console.log("BOM TRABALHO!! Pratique um pouco mais  ");
-
-   } else if (acerto >= 7 && acerto <= 9) {
-      console.log("Jogador(a): " + nomeUsuario);
-
-      console.log("Pontuação final:  " + acerto + "  acertos ");
-      console.log("MUITO BOM !! Voce acertou a maioria   ");
-
-
-   } else if (acerto == 10) {
-      console.log("Jogador(a): " + nomeUsuario);
-
-      console.log("Pontuação final:  " + acerto + "  acertos ");
-
-      console.log("EXCELENTE!! Você é um  verdadeiro expert   ");
-
-
-   } else {
-
-      console.log(" VISH !! errou tudo");
-
-
+   //verifica a qunatidade de acertos e de acordo com o resultado , é retornado uma mensagem para cda quantidade
+   switch (true) {
+      case (acerto >= 1 && acerto <= 3):
+         console.log("Jogador(a): " + nomeUsuario);
+         console.log("Pontuação final:  " + acerto + "  acertos ");
+         console.log("OH NAO!! Tente mais uma vez ");
+         break;
+      case (acerto >= 4 && acerto <= 6):
+         console.log("Jogador(a): " + nomeUsuario);
+         console.log("Pontuação final:  " + acerto + "  acertos ");
+         console.log("BOM TRABALHO!! Pratique um pouco mais  ");
+         break;
+      case (acerto >= 7 && acerto <= 9):
+         console.log("Jogador(a): " + nomeUsuario);
+         console.log("Pontuação final:  " + acerto + "  acertos ");
+         console.log("MUITO BOM !! Voce acertou a maioria   ");
+         break;
+      case (acerto == 10):
+         console.log("Jogador(a): " + nomeUsuario);
+         console.log("Pontuação final:  " + acerto + "  acertos ");
+         console.log("EXCELENTE!! Você é um  verdadeiro expert   ");
+         break;
+      default:
+         console.log(" VISH !! errou tudo");
+         break;
    }
-
 
    console.log("\nFim do quiz!");
 }
